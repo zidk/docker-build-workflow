@@ -34,7 +34,7 @@ jobs:
     name: Call Build on PR
     if: github.event_name == 'pull_request'
     # FIXME: fork this repo and update this path to YOUR reusable workflow location
-    uses: bretfisher/docker-build-workflow/.github/workflows/reusable-docker-build.yaml@main
+    uses: zidk/docker-build-workflow/.github/workflows/reusable-docker-build.yaml@main
     with:  
       # NOTE: there are lots of input options for this reusable workflow
       # read the comments in the inputs area of the reusable workflow for more info
@@ -53,7 +53,7 @@ jobs:
     # this if is filtered to only the main branch push event (see events at top)
     if: github.event_name == 'push'
     # FIXME: fork this repo and update this path to YOUR reusable workflow location
-    uses: bretfisher/docker-build-workflow/.github/workflows/reusable-docker-build.yaml@main
+    uses: zidk/docker-build-workflow/.github/workflows/reusable-docker-build.yaml@main
     secrets:
       dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
       dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
